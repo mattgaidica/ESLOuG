@@ -960,6 +960,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
     }
     
+    @IBAction func WritePage(_ sender: Any) {
+        iosSettings.WritePage = 0x01
+        PushSettings(false)
+        printESLO("Page written")
+    }
+    
+    
     @IBAction func SWAThreshChanged(_ sender: Any, forEvent event: UIEvent) {
         if let touchEvent = event.allTouches?.first {
             switch touchEvent.phase {
